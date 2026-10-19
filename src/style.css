@@ -1,6 +1,111 @@
-@import "tailwindcss";
-@import "./fonts/inter.css";
+@import 'tailwindcss';
+@import './fonts/inter.css';
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+:root.dark {
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+}
+html:not(.js) .js-only {
+  display: none;
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 4px;
+}
+.dark :where(a, button, [tabindex]):focus-visible {
+  outline-color: #c4b5fd;
+}
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  color: #111827;
+  border-radius: 0.5rem;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+[data-theme-btn][aria-pressed='true'] {
+  background: #fff;
+  color: #030712;
+  box-shadow: 0 1px 2px #0000000d;
+}
+.dark [data-theme-btn][aria-pressed='true'] {
+  background: #4b5563;
+  color: #f9fafb;
+}
+[data-float='1'] {
+  animation: float 6s ease-in-out infinite;
+}
+[data-float='2'] {
+  animation: float 7s ease-in-out infinite 1s;
+}
+[data-float='3'] {
+  animation: float 8s ease-in-out infinite 2s;
+}
+[data-float='4'] {
+  animation: float 7.5s ease-in-out infinite 0.5s;
+}
+[data-float='5'] {
+  animation: float 6.5s ease-in-out infinite 1.5s;
+}
+.gallery-dot {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 9999px;
+}
+.gallery-dot span {
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  background: #6b7280;
+  transition: width 0.2s;
+}
+.gallery-dot[aria-pressed='true'] span {
+  width: 24px;
+  background: #4b5563;
+}
+.dark .gallery-dot span {
+  background: #9ca3af;
+}
+.dark .gallery-dot[aria-pressed='true'] span {
+  background: #f3f4f6;
+}
+.photo-gallery-viewport {
+  container-type: inline-size;
+}
+#gallery-track.is-enhanced {
+  animation: scroll 40s linear infinite;
+}
+#gallery-track.is-paused,
+.photo-gallery-viewport:hover #gallery-track,
+.photo-gallery-viewport:focus-within #gallery-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

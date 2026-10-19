@@ -10,6 +10,12 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.generated/
+playwright-report/
+test-results/
+.osp/downloads/
+.osp/artifacts/
+.osp/preview.png
 *.local
 
 # Editor directories and files

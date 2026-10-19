@@ -1,0 +1,9 @@
+node_modules
+dist
+.generated
+package-lock.json
+public
+src/fonts/*.woff2
+.osp
+playwright-report
+test-results

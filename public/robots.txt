@@ -1,2 +1,3 @@
-ser-agent: *
+User-agent: *
 Allow: /
+Sitemap: https://alenabard.ru/sitemap.xml
