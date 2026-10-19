@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Градиент закатного неба -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#311042" />
+      <stop offset="45%" stop-color="#c83e5b" />
+      <stop offset="75%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+    <!-- Градиент солнца -->
+    <linearGradient id="sun" x1="32" y1="16" x2="32" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect width="64" height="64" rx="16" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#squircle)">
+    <!-- Фон неба -->
+    <rect width="64" height="64" fill="url(#sky)" />
+
+    <!-- Закатное солнце -->
+    <circle cx="32" cy="33" r="14" fill="url(#sun)" />
+
+    <!-- Темное море у горизонта (мягкими волнами-мазками) -->
+    <path d="M -4 42 Q 16 39 32 42 T 68 41 L 68 68 L -4 68 Z" fill="#1e1b4b" />
+    
+    <!-- Художественные мазки кистью (солнечная дорожка на воде) -->
+    <path d="M 16 47 Q 32 45 48 47" stroke="#fb923c" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 21 53 Q 32 51.5 43 53" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+    <path d="M 26 58.5 Q 32 57.5 38 58.5" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+</svg>
