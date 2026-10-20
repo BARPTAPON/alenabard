@@ -80,8 +80,8 @@ const galleryTrack = document.getElementById('gallery-track');
 
 if (galleryTrack) {
   const myImages = [
-    '/13.jpg', '/2.JPG', '/14.jpg', '/10.png',
-    '/1.png', '/3.png', '/11.jpg', '/8.jpg'
+    '/13.webp', '/2.webp', '/14.webp', '/10.webp',
+    '/1.webp', '/3.webp', '/11.webp', '/8.webp'
   ];
 
   const createCard = (src, isDuplicate = false) => `
